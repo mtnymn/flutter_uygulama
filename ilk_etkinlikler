@@ -28,4 +28,15 @@ void main() {
     ),
   );
 }
+void main() {
+  runApp(
+    MaterialApp(debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+              leading: Icon(Icons.menu),
+              actions: [Icon(Icons.comment), Icon(Icons.settings),Icon(Icons.phone)],
+              title: Text("NOVA KREŞ"))),
+    ),
+  );
+}
 
