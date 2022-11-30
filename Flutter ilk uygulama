@@ -96,3 +96,77 @@ void main() => runApp(
         ),
       ),
     );
+4. CONTAİNER KULLANIMI
+import 'package:flutter/material.dart';
+
+/*Container() Container’ı, içerisine nesneler 
+yerleştirebileceğimiz bir kutu olarak tanımlayabiliriz. 
+*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'Material App',
+      home: Scaffold(
+      backgroundColor:Colors.blue,
+        appBar: AppBar(title: Text('AppBar')),
+        body: Container(
+          width: 200, //genişlik ayarı
+          height: 300, //yükseklik ayarı
+          color: Colors.red, //renk ayarı
+          alignment: Alignment.topLeft, //hizalama ayarı
+          padding: EdgeInsets.all(10), //içten boşluk ayarı
+          margin: EdgeInsets.all(20), //dıştan boşluk ayarı
+          //  child: parametresi ile başka herhangi bir widget eklenebilir,
+          //  o widget Container içerisinde görüntülenir.
+          child: Text(
+            'Container...',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+5. CONTAİNER>decoration özelliği 
+import 'package:flutter/material.dart';
+
+//  Container()
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'Material App',
+      home: Scaffold(
+        appBar: AppBar(title: Text('AppBar')),
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 300,
+            //  color: Colors.red, decoration kullandığımızda color kapatıyoruz.
+            decoration: BoxDecoration( //containere farklı bir görünüm kazandırmak için kullanıyoruz
+              color: Colors.amber,
+              shape: BoxShape.circle,//oval bir şekil verdik
+              border: Border.all(         //  Containerımıza sınır çiziyoruz. Sınırımızın kalınlığı 2 piksel, rengi siyah
+                color: Colors.black,
+                width: 2.0,
+              ),
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://avatars1.githubusercontent.com/u/14101776?s=250&v=3')),
+            ),
+            alignment: Alignment.bottomCenter,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(20),
+            child: Text(
+              'Container...',
+              style: TextStyle(color: Colors.black, fontSize: 20),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+
