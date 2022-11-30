@@ -47,3 +47,52 @@ void main() => runApp(
         ),
       ),
     );
+   2. MaterialApp>>home:Scaffold(appBar,body:Container,Center; KULLANIMI
+    import 'package:flutter/material.dart';
+
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: Container(
+            child: Text(
+              "Anasayfa",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+              ),
+            ),
+            color: Colors.red, //Containerin rengi belirler.
+            width: 200, //genişlik ayarı
+            height: 100, //Yükseklik Ayarı
+            alignment: Alignment.center, //yazıyı ortalıyor.
+            margin: EdgeInsets.all(50), //kutuyu kenardan uzaklaştırıyor.
+            padding: EdgeInsets.all(20),
+          ),
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text("Gültepe Ortaokulu"),
+          ),
+        ),
+      ),
+    );
+    3.GÜN MaterialApp>>home:Scaffold(appBar,body:Container,Center;  center KULLANIMI
+    import 'package:flutter/material.dart';
+
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text("Gültepe Ortaokulu"),
+          ),
+          body: Center(
+              child: Container(child: Text("Anasayfa"),
+            color: Colors.amber,
+            margin: EdgeInsets.all(100),
+            padding: EdgeInsets.all(100),
+          )),
+        ),
+      ),
+    );
