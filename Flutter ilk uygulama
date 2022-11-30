@@ -168,5 +168,40 @@ void main() {
     ),
   );
 }
+COLUMN kelimesi Türkçe’de kolon olarak adlandırılır. Column Widget’ı, Container’dan farklı olarak,
+children: parametresine sahiptir. Children parametresi bir Widget listesi (<Widget>[ , , , ]) alır.
+Bu da kolon içerisine birden fazla Widget eklenebileceği anlamına gelmektedir. 
+Eklenen her Widget, üst üste ekleniyor gibi sonuç verir.
+import 'package:flutter/material.dart';
+
+//  Container()
+//  Column()
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'Material App',
+      home: Scaffold(
+        appBar: AppBar(title: Text('AppBar')),
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 300,
+            color: Colors.blueGrey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center, 
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                ElevatedButton(child: Text("1"), onPressed: () {}),
+                ElevatedButton(child: Text("2"), onPressed: () {}),
+                ElevatedButton(child: Text("3"), onPressed: () {}),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
 
 
