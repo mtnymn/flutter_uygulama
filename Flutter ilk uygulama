@@ -203,5 +203,19 @@ void main() {
     ),
   );
 }
+ROW kullanımı //sağdan sola hizlaama yapar(Children[] ile kullanır.
+Row(
+      //  Sağdan-Sola Hizalama
+      mainAxisAlignment: MainAxisAlignment.center,
+      //  Yukarıdan-Aşağıya Hizalama
+      crossAxisAlignment: CrossAxisAlignment.start,
+      //  Row içerisine eklenen diğer widgetların listesi
+      children: <Widget>[
+        RaisedButton(child: Text("1"), onPressed: () {}),
+        RaisedButton(child: Text("2"), onPressed: () {}),
+        RaisedButton(child: Text("3"), onPressed: () {}),
+      ],
+    ),
+    
 
 
