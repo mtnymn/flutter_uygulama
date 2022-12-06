@@ -216,7 +216,7 @@ Row(
         RaisedButton(child: Text("3"), onPressed: () {}),
       ],
     ),
-    5.gün bottonNavigationBar Kullanımı //butonları alta yazar (scaffold içinde)
+    6.gün bottonNavigationBar Kullanımı //butonları alta yazar (scaffold içinde)
     import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -267,7 +267,7 @@ void main() => runApp(
       ),
     );
 
- 6.GÜN İLK CLASSLAR 
+ 7.GÜN İLK CLASSLAR 
  import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -327,5 +327,103 @@ class Govde extends StatelessWidget {
     );
   }
 }
+8.GÜN SafeArea Ve DRAWER KULLANIMI(YANDAN ÇEKMECE AILMASI)
+import 'package:flutter/material.dart';
+
+void main() => runApp(
+      BenimUyg(),
+    );
+
+class BenimUyg extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                //çekmece başlığı
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text('Çekmece Başlığı'),
+              ),
+              ListTile(
+                //liste kutuçuğu
+                title: const Text('Basit bir Öğe'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('Ayarlar'),
+                subtitle: Text("Uygulamayı kişiselleştirin"),
+                leading: Icon(Icons.settings),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Mesajlar'),
+                subtitle: Text("Mesajlarınızı okuyun"),
+                leading: Icon(Icons.question_answer),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
+        body: Govde(),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.account_box),
+              onPressed: () {},
+            ),
+          ],
+          leading: Icon(Icons.menu),
+          centerTitle: true,
+          title: Text("Gültepe Ortaokulu"),
+        ),
+      ),
+    );
+  }
+}
+
+class Govde extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Center(
+        child: Container(
+          margin: EdgeInsets.all(50),
+          padding: EdgeInsets.all(30),
+          width: 200,
+          height: 200,
+          alignment: Alignment.center,
+          color: Colors.red,
+          child: Text(
+            "Anasayfa",
+            style: TextStyle(
+              color: Colors.yellow,
+              fontSize: (30),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 
