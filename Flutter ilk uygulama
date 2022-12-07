@@ -424,6 +424,61 @@ class Govde extends StatelessWidget {
     );
   }
 }
+9.GÜN Resim ekleme ve Buton Ekleme devamı 10. sayfada olacak.(stateful widget kullanılacak);
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(
+      MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              "Metin/Çiçek",
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          body: Center(
+            child: Column(children: [
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextButton(
+                    //TextButton=FlatButton yerine kullanılıyor. fakat FlatButton hale kullanılıyor. Aşağıdaki örnekte var.
+                    onPressed: () {
+                    
+                      print("evcil hayvan tıklandı");
+                    },
+                    child: Image.asset("lib/resimler/evcil_1.jpg"),
+                  ),
+                ),
+              ), //Expanded;resimleri ekrana kardeş payı olarak bölüşüyor.
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Image.asset("lib/resimler/kartal.jpg"),
+                  ),
+                ),
+              ), //flex; resimleri ekranda alacakları payı veriyoruz. artık kardeş değiller.
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset("lib/resimler/panda.jpg"),
+                ),
+              ),
+            ]),
+          ),
+        ),
+      ),
+    );
 
 
 
