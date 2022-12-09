@@ -203,19 +203,71 @@ void main() {
     ),
   );
 }
-ROW kullanımı //sağdan sola hizlaama yapar(Children[] ile kullanır.
-Row(
-      //  Sağdan-Sola Hizalama
-      mainAxisAlignment: MainAxisAlignment.center,
-      //  Yukarıdan-Aşağıya Hizalama
-      crossAxisAlignment: CrossAxisAlignment.start,
-      //  Row içerisine eklenen diğer widgetların listesi
-      children: <Widget>[
-        RaisedButton(child: Text("1"), onPressed: () {}),
-        RaisedButton(child: Text("2"), onPressed: () {}),
-        RaisedButton(child: Text("3"), onPressed: () {}),
-      ],
-    ),
+
+ROW kullanımı ve Buton Kullanımı
+//sağdan sola hizlaama yapar(Children[] ile kullanır.
+import 'package:flutter/material.dart';
+
+void main() => runApp(BenimUyg());
+
+class BenimUyg extends StatelessWidget {
+  const BenimUyg({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "İlk Uygulamam",
+            style: TextStyle(
+              fontSize: (20),
+            ),
+          ),
+        ),
+        body: AnaSayfa(),
+      ),
+    );
+  }
+}
+
+class AnaSayfa extends StatefulWidget {
+  const AnaSayfa({Key? key}) : super(key: key);
+
+  @override
+  State<AnaSayfa> createState() => _AnaSayfaState();
+}
+
+class _AnaSayfaState extends State<AnaSayfa> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text("Bir"),
+            ),
+          ),
+          Expanded(
+            child: OutlinedButton(
+              onPressed: () {},
+              child: Text("İki"),
+            ),
+          ),
+          Expanded(
+            child: TextButton(
+              onPressed: () {},
+              child: Text("Üç"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
     6.gün bottonNavigationBar Kullanımı //butonları alta yazar (scaffold içinde)
     import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
