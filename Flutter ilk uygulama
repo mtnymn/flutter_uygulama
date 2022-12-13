@@ -496,7 +496,7 @@ void main() => runApp(
           body: Center(
             child: Column(children: [
               Expanded(
-                flex: 2,
+                : 2,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: TextButton(
@@ -531,6 +531,57 @@ void main() => runApp(
         ),
       ),
     );
+    import 'dart:math';
+import 'package:flutter/material.dart';
+
+void main() => runApp(BenimUyg());
+
+class BenimUyg extends StatefulWidget {
+  @override
+  State<BenimUyg> createState() => _BenimUygState();
+}
+10.GÜN FLUTTER ÖRNEK UYGULAMASI YAPIMI
+class _BenimUygState extends State<BenimUyg> {
+  int sayac = 0;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: (() {
+            setState(() {
+              sayac++;
+            });
+          }),
+        ),
+        appBar: AppBar(
+          toolbarHeight: 100,
+          centerTitle: true,
+          title: Text(
+            "Flutter Sayaç Uygulması",
+            style: TextStyle(
+              fontSize: 25,
+            ),
+          ),
+        ),
+        body: Center(
+          child: Container(
+            color: Colors.orange,
+            child: Text(
+              "Butona Basma Sayınız:$sayac",
+              style: TextStyle(
+                fontSize: 22,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 
 
