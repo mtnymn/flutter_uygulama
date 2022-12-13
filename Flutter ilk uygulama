@@ -476,7 +476,112 @@ class Govde extends StatelessWidget {
     );
   }
 }
-9.GÜN Resim ekleme ve Buton Ekleme devamı 10. sayfada olacak.(stateful widget kullanılacak);
+
+9.Gün Columnları Bölme yazı ekleme boyutlandırma(3adet column ekle ve bunları düzenle)
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.orange,
+            centerTitle: true,
+            title: Text("Gültepe Ortaokulu"),
+          ),
+          body: Anasayfa(),
+        ),
+      ),
+    );
+
+class Anasayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.yellow,
+                child: Center(
+                  child: Text(
+                    "Giyim Bölümü",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Text(
+            //resmin altına yazı yazıyoruz.
+            "Giyim",
+            style: TextStyle(
+              fontSize: 18,
+            ),
+          ),
+          Container(
+            width: 100,
+            child: Divider( //container arasında bölme yapıyoruz. 
+            //daha sonra boyutlandırmak için Container Widgetin içine alıyoruz.
+              color: Colors.black,
+              height: 10,
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.green,
+                child: Center(
+                  child: Text(
+                    "Tatlı Bölümü",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
+                child: Center(
+                  child: Text(
+                    "Anasayfa",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+10.GÜN Resim ekleme ve Buton Ekleme devamı 11. sayfada olacak.(stateful widget kullanılacak);
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -540,7 +645,7 @@ class BenimUyg extends StatefulWidget {
   @override
   State<BenimUyg> createState() => _BenimUygState();
 }
-10.GÜN FLUTTER ÖRNEK UYGULAMASI YAPIMI
+11.GÜN FLUTTER ÖRNEK UYGULAMASI YAPIMI
 class _BenimUygState extends State<BenimUyg> {
   int sayac = 0;
   @override
