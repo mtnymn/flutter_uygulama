@@ -687,6 +687,76 @@ class _BenimUygState extends State<BenimUyg> {
   }
 }
 
+12.Gün Resimlere Button Özelliği Ekleme
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(benimuyg());
+
+class benimuyg extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Resim Ekleme"),
+        ),
+        body: anasayfa(),
+      ),
+    );
+  }
+}
+
+class anasayfa extends StatefulWidget {
+  const anasayfa({Key? key}) : super(key: key);
+  _anasayfaState createState() => _anasayfaState();
+}
+
+class _anasayfaState extends State<anasayfa> {
+  int kartalno = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          Expanded(
+            child: SizedBox(
+              width: 200,
+              height: 200,
+              child: FlatButton(
+                onPressed: (() {
+                  setState(() {
+                    kartalno = Random().nextInt(5) + 1;
+                  });
+                }),
+                child: Image.asset("resimler/kartal_$kartalno.jpg"),
+              ),
+            ),
+          ),
+          Expanded(
+            child: SizedBox(
+              width: 200,
+              height: 200,
+              child: Image.asset("resimler/kedi1.jpg"),
+            ),
+          ),
+          Expanded(
+            child: SizedBox(
+              width: 200,
+              height: 200,
+              child: Image.asset("resimler/kopek1.jpg"),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
 
 
 
