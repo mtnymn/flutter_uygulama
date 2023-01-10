@@ -755,6 +755,84 @@ class _anasayfaState extends State<anasayfa> {
     );
   }
 }
+13. Gün resimlerin altına yazı ekleme ve resimle birlikte yazının değişmesini sağlama
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(benimuyg());
+
+class benimuyg extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Resim Ekleme"),
+        ),
+        body: anasayfa(),
+      ),
+    );
+  }
+}
+
+class anasayfa extends StatefulWidget {
+  const anasayfa({Key? key}) : super(key: key);
+  _anasayfaState createState() => _anasayfaState();
+}
+
+class _anasayfaState extends State<anasayfa> {
+  int kartalno = 1;
+  List<String> kartaladlari = [
+    "Şah Kartal",
+    "Boz kartal",
+    "Bozkır kartalı",
+    "Deniz kartalı",
+    "Orman kartalı"
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          Expanded(
+            child: FlatButton(
+              splashColor: Colors.white,
+              highlightColor: Colors.white,
+              onPressed: (() {
+                setState(() {
+                  kartalno = Random().nextInt(5) + 1;
+                });
+              }),
+              child: Image.asset(
+                "resimler/kartal_$kartalno.jpg",
+                width: 300,
+                height: 300,
+              ),
+            ),
+          ),
+          Text(
+            kartaladlari[kartalno - 1],
+            style: TextStyle(fontSize: 24),
+          ),
+          Container(
+            width: 150,
+            child: Divider(height: 5, color: Colors.black),
+          ),
+          Expanded(
+            child: Image.asset("resimler/kedi1.jpg", width: 300, height: 300),
+          ),
+          Expanded(
+            child: Image.asset("resimler/kopek1.jpg"),
+          )
+        ],
+      ),
+    );
+  }
+}
 
 
 
